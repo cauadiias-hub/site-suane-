@@ -519,30 +519,6 @@ O8E9VtEVinyzt2Q2sGzUVymDeX/yFQEY0AMS0lDAPSPL6+f8APQ8DVitIAu/swOdwELkX77zrCSIyU42
 .suaneCloud,.suaneButterfly{position:absolute;pointer-events:none;z-index:0;opacity:.34}.suaneCloud{width:220px;height:92px;border:1.5px solid rgba(69,99,111,.36);border-radius:55% 45% 52% 48%;filter:blur(.15px);background:radial-gradient(circle at 25% 55%,rgba(185,197,199,.2),transparent 58%),radial-gradient(circle at 70% 42%,rgba(207,177,180,.18),transparent 62%)}.suaneCloud:before,.suaneCloud:after{content:"";position:absolute;border:1.5px solid rgba(69,99,111,.30);border-bottom:0;border-radius:50% 50% 0 0;background:rgba(255,255,255,.22)}.suaneCloud:before{width:72px;height:52px;left:36px;top:-24px}.suaneCloud:after{width:92px;height:66px;right:34px;top:-34px}.suaneButterfly{font-size:38px;color:var(--suane-purple);font-family:serif;line-height:1;transform:rotate(-10deg)}.suaneButterfly:before{content:"♡";display:inline-block;transform:rotate(28deg) scaleX(1.15);color:rgba(119,100,137,.38)}.suaneDecorA{left:3vw;top:120px}.suaneDecorB{right:5vw;bottom:70px;transform:scale(.8)}.suaneDecorC{left:5vw;bottom:40px}.suaneDecorD{right:7vw;top:90px}.intro,.tcc,.youth,.ethicsBento,.faq,.finalCta,footer{position:relative!important;overflow:hidden!important}.intro>*:not(.suaneCloud):not(.suaneButterfly),.services>*:not(.suaneCloud):not(.suaneButterfly),.tcc>*:not(.suaneCloud):not(.suaneButterfly),.youth>*:not(.suaneCloud):not(.suaneButterfly),.ethicsBento>*:not(.suaneCloud):not(.suaneButterfly),.faq>*:not(.suaneCloud):not(.suaneButterfly),.finalCta>*:not(.suaneCloud):not(.suaneButterfly),footer>*:not(.suaneCloud):not(.suaneButterfly){position:relative;z-index:1}
 @media(max-width:760px){.nav .brand:after{font-size:1rem}.contentMore,.cardMore{padding-bottom:64px!important}.suaneContactBlock{grid-template-columns:1fr;margin-bottom:56px}.suaneCloud{width:160px;height:70px}.suaneButterfly{font-size:30px}.motionMarquee span:first-child:after{font-size:1.25rem}}
 </style>
-<style id="suane-cloud-space-refinement">
-/* Ajuste cirurgico: reduz o vazio vertical e reforca as nuvens graficas ja existentes. */
-.whoTherapy{margin-top:clamp(34px,4vw,54px)!important}
-#tcc.tcc{padding-bottom:clamp(58px,6vw,88px)!important}
-#ajuda.services{padding-top:clamp(66px,7vw,96px)!important}
-.suaneContactBlock{margin-top:clamp(36px,5vw,64px)!important;margin-bottom:clamp(42px,5vw,70px)!important}
-.suaneCloud{opacity:.46!important;width:clamp(150px,17vw,260px)!important;height:clamp(62px,7.5vw,108px)!important;border-color:rgba(69,99,111,.30)!important;background:radial-gradient(circle at 24% 58%,rgba(185,197,199,.28),transparent 58%),radial-gradient(circle at 70% 40%,rgba(207,177,180,.23),transparent 62%),linear-gradient(135deg,rgba(255,255,255,.38),rgba(198,191,200,.16))!important}
-.suaneCloud:before,.suaneCloud:after{border-color:rgba(69,99,111,.24)!important;background:rgba(255,255,255,.24)!important}
-.suaneCloudSoft{opacity:.28!important;transform:scale(.74) rotate(-5deg)}
-.suaneCloudOne{right:6vw;top:clamp(28px,4vw,70px)}
-.suaneCloudTwo{left:4vw;bottom:clamp(28px,4vw,76px);transform:scale(.72) rotate(6deg)}
-.suaneCloudThree{right:9vw;bottom:clamp(24px,4vw,70px);transform:scale(.66) rotate(-8deg)}
-.suaneCloudFour{left:6vw;top:clamp(28px,5vw,86px);transform:scale(.7) rotate(4deg)}
-#atendimentos .suaneCloudOne{top:32px;right:5vw}
-#primeiro-passo .suaneCloudTwo{bottom:34px;left:6vw}
-@media(max-width:760px){
-  #tcc.tcc{padding-bottom:56px!important}
-  #ajuda.services{padding-top:58px!important}
-  .whoTherapy{margin-top:30px!important}
-  .suaneCloudOne,.suaneCloudThree{right:-18px}
-  .suaneCloudTwo,.suaneCloudFour{left:-24px}
-  .suaneCloudSoft{opacity:.18!important}
-}
-</style>
 <script id="suane-final-adjustments-script">
 (function(){
   function ready(fn){document.readyState==='loading'?document.addEventListener('DOMContentLoaded',fn):fn();}
@@ -579,22 +555,6 @@ O8E9VtEVinyzt2Q2sGzUVymDeX/yFQEY0AMS0lDAPSPL6+f8APQ8DVitIAu/swOdwELkX77zrCSIyU42
       var cloud=document.createElement('span'); cloud.className='suaneCloud '+(i%2?'suaneDecorB':'suaneDecorA'); cloud.setAttribute('aria-hidden','true');
       var butterfly=document.createElement('span'); butterfly.className='suaneButterfly '+(i%2?'suaneDecorC':'suaneDecorD'); butterfly.setAttribute('aria-hidden','true');
       section.append(cloud,butterfly);
-    });
-    var cloudTargets=[
-      ['#apresentacao','suaneCloud suaneCloudSoft suaneCloudOne'],
-      ['#tcc','suaneCloud suaneCloudSoft suaneCloudTwo'],
-      ['#ajuda','suaneCloud suaneCloudSoft suaneCloudThree'],
-      ['#atendimentos','suaneCloud suaneCloudSoft suaneCloudOne'],
-      ['#informacoes','suaneCloud suaneCloudSoft suaneCloudFour'],
-      ['#primeiro-passo','suaneCloud suaneCloudSoft suaneCloudTwo']
-    ];
-    cloudTargets.forEach(function(item){
-      var section=document.querySelector(item[0]);
-      if(!section||section.querySelector('.suaneCloudSoft')) return;
-      var cloud=document.createElement('span');
-      cloud.className=item[1];
-      cloud.setAttribute('aria-hidden','true');
-      section.appendChild(cloud);
     });
   });
 })();
